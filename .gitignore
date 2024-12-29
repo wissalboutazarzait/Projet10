@@ -1,0 +1,7 @@
+# Ignorer les fichiers de tests temporaires ou de configuration spécifique
+/tests/*
+!tests/.gitkeep  # Assurez-vous que le fichier .gitkeep dans tests est suivi par Git
+
+# Ignorer d'autres fichiers ou dossiers inutiles
+*.log
+
