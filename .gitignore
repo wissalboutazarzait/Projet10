@@ -5,3 +5,5 @@
 # Ignorer d'autres fichiers ou dossiers inutiles
 *.log
 
+
+/vendor/

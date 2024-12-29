@@ -1,0 +1,17 @@
+{
+    "name": "dell/projet10",
+    "description": "Gestion de projet PHP",
+    "autoload": {
+        "psr-4": {
+            "Dell\\Projet10\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "wissal"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^11.5"
+    }
+}
