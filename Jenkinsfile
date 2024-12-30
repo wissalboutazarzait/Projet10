@@ -92,4 +92,4 @@ pipeline {
             echo 'Une erreur est survenue durant le pipeline.'
         }
     }
-}
+
