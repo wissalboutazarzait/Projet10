@@ -21,8 +21,8 @@ pipeline {
                         branches: [[name: '*/main']], 
                         userRemoteConfigs: [
                             [
-                                url:  url: 'https://github.com/wissalboutazarzait/Projet10.git',
-                            credentialsId: 'github-token2'
+                                url: 'https://github.com/wissalboutazarzait/Projet10.git',
+                                credentialsId: 'github-token2'
                             ]
                         ]
                     ]
