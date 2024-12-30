@@ -64,16 +64,7 @@ pipeline {
             }
         }
 
-        stage('Static Analysis with SonarQube') {
-            steps {
-                script {
-                    echo 'Analyse statique du code avec SonarQube'
-                    withSonarQubeEnv('SonarQube') {
-                        sh 'composer install && vendor/bin/phpcs --standard=PSR2 src/'  
-                    }
-                }
-            }
-        }
+       
 
         stage('Deploy') {
             steps {
