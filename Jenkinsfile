@@ -6,23 +6,31 @@ pipeline {
         DOCKER_TAG = 'latest'  
         REGISTRY = 'docker.io'  
         SONARQUBE_SERVER = 'SonarQube'  
-        DEPLOY_SERVER = 'user@serveur-distant' 
+        DEPLOY_SERVER = 'user@serveur-distant'
+        GIT_URL = 'https://github.com/wissal041/projet10-php.git'
+        GIT_CREDENTIALS = 'github-jenkins-token'  
+    }
     }
 
     stages {
         
         stage('Checkout') {
-    steps {
-        script {
-            echo 'Récupération du code depuis le dépôt Git'
-            checkout([
-                $class: 'GitSCM',
-                branches: [[name: 'main']], 
-                userRemoteConfigs: [[url: 'https://github.com/wissal041/projet10-php.git']] 
-            ])
+            steps {
+                script {
+                    echo 'Récupération du code depuis le dépôt Git'
+                    checkout scm: [
+                        $class: 'GitSCM',
+                        branches: [[name: '*/main']], 
+                        userRemoteConfigs: [
+                            [
+                                url: GIT_URL,
+                                credentialsId: GIT_CREDENTIALS
+                            ]
+                        ]
+                    ]
+                }
+            }
         }
-    }
-}
 
 
         stage('Build') {
