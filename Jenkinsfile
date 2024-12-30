@@ -10,9 +10,8 @@ pipeline {
         GIT_URL = 'https://github.com/wissal041/projet10-php.git'
         GIT_CREDENTIALS = 'github-jenkins-token'  
     }
-    }
 
-    stages {
+    stages {  
         
         stage('Checkout') {
             steps {
@@ -31,7 +30,6 @@ pipeline {
                 }
             }
         }
-
 
         stage('Build') {
             steps {
@@ -72,8 +70,6 @@ pipeline {
             }
         }
 
-       
-
         stage('Deploy') {
             steps {
                 script {
@@ -92,4 +88,4 @@ pipeline {
             echo 'Une erreur est survenue durant le pipeline.'
         }
     }
-
+}
