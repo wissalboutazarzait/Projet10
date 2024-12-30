@@ -4,11 +4,10 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'wissal041/projet10-php'  
         DOCKER_TAG = 'latest'  
-        REGISTRY = 'docker.io'  
-        SONARQUBE_SERVER = 'SonarQube'  
+        REGISTRY = 'docker.io'   
         DEPLOY_SERVER = 'user@serveur-distant'
-        GIT_URL = 'https://github.com/wissal041/projet10-php.git'
-        GIT_CREDENTIALS = 'github-jenkins-token'  
+        GIT_URL = 'https://github.com/wissalboutazarzait/Projet10.git'
+        GIT_CREDENTIALS = 'github-jenkins-token2'  
     }
 
     stages {  
@@ -22,8 +21,8 @@ pipeline {
                         branches: [[name: '*/main']], 
                         userRemoteConfigs: [
                             [
-                                url: GIT_URL,
-                                credentialsId: GIT_CREDENTIALS
+                                url:  url: 'https://github.com/wissalboutazarzait/Projet10.git',
+                            credentialsId: 'github-token2'
                             ]
                         ]
                     ]
