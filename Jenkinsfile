@@ -11,6 +11,19 @@ pipeline {
     }
 
     stages {  
+        pipeline {
+    agent any
+    stages {
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    bat 'composer install'
+                }
+            }
+        }
+    }
+}
+
         
         stage('Checkout') {
             steps {
